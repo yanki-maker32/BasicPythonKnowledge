@@ -1,0 +1,10 @@
+Find next palindrome number
+input: 11
+output: 22
+
+def NextPalindrome(num):
+  num+=1
+  while str(num)[::-1] !=str(num):
+    num+=1
+  return num
+print NextPalindrome(raw_input())

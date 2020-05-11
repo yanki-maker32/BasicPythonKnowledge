@@ -1,0 +1,17 @@
+##Have the function TwoSum(arr) take the array of integers stored in arr, and determine 
+if any two numbers (excluding the first element) in the array can sum up to the first element in the array. 
+For example: if arr is [7, 3, 5, 2, -4, 8, 11], then there are actually two pairs that sum to the number 7: [5, 2] and [-4, 11]. 
+Your program should return all pairs, with the numbers separated by a comma, in the order the first number appears in the array.
+Pairs should be separated by a space. So for the example above, your program would return: 5,2 -4,11
+###
+import itertools
+def TwoSum(a):
+  x, sums= a[0],''
+  for pair in list(itertools.combinations(a[1:], 2)):
+    if pair[0]+pair[1]==x:
+      sums+= str(pair[0])+',' + str(pair[1])+ ''
+  if sums == '':
+    return -1
+  return sums
+
+print TwoSum(raw_input())
